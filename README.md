@@ -1,2 +1,0 @@
-# Pwhienon.github.io
-Portfolio
