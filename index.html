@@ -1,71 +1,268 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script> 
-  $(document).ready(function(){
-  $("#dropdown-icon").click(function(){
-  $("#project-excerpt").slideToggle("slow");
-  });
-  });
-</script>
-  <meta charset="UTF-8">
-  <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover' />
+<!doctype html>
+<html class="h-100" lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="description" content="Petri Jomppanen Portfolio">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.svg">
+  <meta name="author" content="Petri">
+  <meta name="generator" content="Eleventy v2.0.0">
+  <meta name="HandheldFriendly" content="true">
   <title>Petri Jomppanen</title>
-  <link rel="shortcut icon" href="./image/logo/icon.svg" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/theme.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;700&display=swap');
+/* inconsolata-300 - latin */
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+/* inconsolata-400 - latin */
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* inconsolata-500 - latin */
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+/* inconsolata-700 - latin */
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+</style>
+
+
 </head>
-
-<body>
-
-  <!-- Navigation -->
-  <div class="sticky-section" id="myHeader">  
-    <nav>
-    <a data-text="Hero" href="./index.html#hero">Home</a>
-    <a data-text="Portfolio" href="./index.html#portfolio">Portfolio</a>
-    <a data-text="Contact" href="./index.html#contact">Let's Talk!</a>
-  </nav>
-</div>
-
-<!-- Hero section -->
-  <section id="hero">
-    <div class="container">
-    <h1 class="hero-section-heading">Designer from this planet. All around pal, with the creativity mindset. Always open for new experiences and learning techniques.</h1>
-    </h1>
-    </div>
-  </section>
-
-<!-- Portfolio section -->
-  <section id="portfolio">
+<!-- NAV-Section -->
+  <body class="bg-black text-white mt-0" data-bs-spy="scroll" data-bs-target="#navScroll">
+    <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-5" tabindex="0">
       <div class="container">
-      <h1 class="section-heading">I have worked in multiple different roles in-house and as a freelancer. From early-stage startups to big corporations to build their ideas, brands and scale their products. All around pal, with the creativity mindset. Always open for new experiences and learning techniques.</h1>
-      <h4 class="margin-botom-medium"> Selected client projects </h4>
-      <div class="w-layout-grid project-grid">
-        <div class="project-grid">
-          <a class="project-image-wapper w-inline-block" href="https://arcticpowerberries.com/" target="_blank">
-          <img src="https://assets.website-files.com/62aaee7fbe9db59603d8c38f/62fd05f5407dd585aeac7346_brij.png" loading="lazy" srcset="https://assets.website-files.com/62aaee7fbe9db59603d8c38f/62fd05f5407dd585aeac7346_brij-p-500.png 500w, https://assets.website-files.com/62aaee7fbe9db59603d8c38f/62fd05f5407dd585aeac7346_brij-p-800.png 800w, https://assets.website-files.com/62aaee7fbe9db59603d8c38f/62fd05f5407dd585aeac7346_brij-p-1080.png 1080w, https://assets.website-files.com/62aaee7fbe9db59603d8c38f/62fd05f5407dd585aeac7346_brij-p-1600.png 1600w, https://assets.website-files.com/62aaee7fbe9db59603d8c38f/62fd05f5407dd585aeac7346_brij.png 1688w" sizes="90vw" alt="" class="project-image medium-image">
-          </a>
-          <a class="project-title winline-block" href="https://arcticpowerberries.com/" target="_blank">
-          <h3>Artcipowerberries - 100% wild berry powder!</h3>
-          </a>
-          <div class="more-info-toggle w-dropdown-toggle" id="w-dropdown-toggle-0" aria-controls="w-dropdown-list-0" aria-haspopup="menu" aria-expanded="false" role="button" tabindex="0">
-          <div>More info</div>
-          <div class="dropdown-icon w-embed" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7.5 7.5V2.5M7.5 7.5V12.5M7.5 7.5H12.5M7.5 7.5H2.5" stroke="#929292" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-          </div>
-          </div>
-          <nav class="more-info-content w-dropdown-list w--open" style="width: 632px;" id="w-dropdown-list-0" aria-labelledby="w-dropdown-toggle-0">
-            <div class="project-excerpt">
-              <div>Role: VP, Product</div>
-              <div>Duties: Design Strategy, Product Design, Branding</div>
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
+        <li class="nav-item">
+          <a class="nav-link fs-5" href="#homepage" aria-label="Homepage">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-5" href="#portfolio" aria-label="Portfolio">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-5" href="#contact" aria-label="Contact">Let's Talk!</a>
+        </li>
+      </ul>
+      </div>
+    </nav>
+<!-- HOMEPAGE-Section -->
+<section id="homepage">
+  <main>
+    <div class="w-100 overflow-hidden position-relative bg-black text-white" data-aos="fade">
+      <div class="position-absolute w-100 h-100 bg-black opacity-75 top-0 start-0"></div>
+        <div class="container py-vh-4 position-relative mt-5 px-vw-5 text-center">
+          <div class="row d-flex align-items-center justify-content-center py-vh-5">
+            <div class="col-12 col-xl-10">
+              <span class="h5 text-secondary fw-lighter">Petri Jomppanen</span>
+              <h1 class="display-huge mt-3 mb-3 lh-1">Designer from this planet.</h1>
             </div>
-            <p>:brij is the modern, simple and secure way to make instant payments, send and receive money, pay bills, and shop across Africa.</p>
-          </nav>
+            <div class="col-12 col-xl-8">
+              <p class="lead text-secondary">I have worked in multiple different roles in-house and as a freelancer. From early-stage startups to big corporations to build their ideas, brands and scale their products. All around pal, with the creativity mindset. Always open for new experiences and learning techniques.</p>
+            </div>
+          </div>
         </div>
+    </div>
+</section>
+<!-- PORTFOLIO-Section -->
+<section id="portfolio">
+  <div class="bg-black py-vh-3">
+    <div class="container bg-black px-vw-5 py-vh-3">
+      <div class="row gx-5">
+        <div class="col-12 col-md-6">
+          <div class="card bg-transparent mb-5" data-aos="zoom-in-up">
+            <div class="bg-dark shadow rounded-1 p-0">
+              <img src="img/webp/arctic-power-berries.webp" width="582" height="327" alt="abstract image" class="img-fluid rounded-1 no-bottom-radius" loading="lazy">
+              <div class="p-5">
+                <h2 class="fw-lighter">Artic Power Berries</h2>
+                <h6>Role: Prodcut Design Lead</h6> <h6>Duties: Mobile and Web app design</h6><p class="pb-4 text-secondary">Arctic Power Berries is 100% pure Dried berries with no added non-sense or sugar.</p>
+                <a href="https://www.arcticpowerberries.com/" target="_blank" class="link-fancy link-fancy-light">See more</a>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-transparent" data-aos="zoom-in-up">
+            <div class="bg-dark shadow rounded-1 p-0">
+              <img src="img/webp/FND.webp" width="582" height="442" alt="abstract image" class="img-fluid rounded-1 no-bottom-radius" loading="lazy">
+              <div class="p-5">
+                <h2 class="fw-lighter">Friendship & Decadence</h2>
+                <h6>Role: Prodcut Design Lead</h6> <h6>Duties: Mobile and Web app design</h6><p class="pb-4 text-secondary"> Record label, radio show & podcast series. Contemporary electronic music for the adventurous mind. Established 2015. Based in Helsinki, Finland.</p>
+                <a href="https://fnd.fi/" target="_blank" class="link-fancy link-fancy-light">See more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="p-5 pt-0 mt-5" data-aos="fade">
+            <span class="h5 text-secondary fw-lighter">Selected projects</span>
+            <h2 class="display-4">Here is a small sneak peek for my selected projects.</h2>
+          </div>
+        <div class="card bg-transparent mb-5 mt-5" data-aos="zoom-in-up">
+          <div class="bg-dark shadow rounded-1 p-0">
+            <img src="img/webp/TrademarkNow.webp" width="582" height="390" alt="abstract image" class="img-fluid rounded-1 no-bottom-radius" loading="lazy">
+            <div class="p-5">
+              <h2 class="fw-lighter">TrademarkNow</h2>
+              <h6>Role: Brand Designer - UI/UX -Designer</h6> <h6>Duties: Branding, Product Design, Web Design</h6><p class="pb-4 text-secondary">TrademarkNow deliver comprehensive technologies and services which streamline trademark clearance and minimize the need to sift through mountains of unnecessary data.</p>
+              <a href="https://www.behance.net/gallery/131818151/TardemarkNow-Visual-Identity-UIUX-Design" target="_blank" class="link-fancy link-fancy-light">See more</a>
+            </div>
+          </div>
+        </div>
+        <div class="card bg-transparent" data-aos="zoom-in-up">
+          <div class="bg-dark shadow rounded-1 p-0">
+            <img src="img/webp/Corsearch.webp" width="582" height="327" alt="abstract image" class="img-fluid rounded-1 no-bottom-radius" loading="lazy">
+            <div class="p-5">
+              <h2 class="fw-lighter">Corsearch</h2>
+              <h6>Role: Brand Designer - UI/UX -Designer - Motion designer</h6> <h6>Duties: Branding, Product Design, Web Design, Motion Design</h6><p class="pb-4 text-secondary">Intelligent Trademark & Brand Protection Solutions. Combining advanced technology and decades of industry expertise, Corsearch is revolutionizing how companies establish and protect their brands.</p>
+              <a href="https://corsearch.com/" target="_blank" class="link-fancy link-fancy-light">Website</a>
+              <a href="https://www.behance.net/gallery/134335045/Corsearch-UIUX-design" target="_blank" class="link-fancy link-fancy-light">App</a>
+              <a href="https://drive.google.com/drive/u/1/folders/1R0Rff9A3eHGLFyIZnbRzsH2OCIAGgPLR" target="_blank" class="link-fancy link-fancy-light">Design System</a>
+              <a href="https://www.behance.net/gallery/134339093/Corsearch-Motion-Video-Guideline" target="_blank" class="link-fancy link-fancy-light">Motion Guideline</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- PORTFOLIO-Section PART.2-->
+<div class="w-100 position-relative bg-black text-white bg-cover d-flex align-items-center">
+  <div class="container-fluid px-vw-5">
+    <div class="position-absolute w-100 h-50 bg-dark bottom-0 start-0"></div>
+      <div class="row d-flex align-items-center position-relative justify-content-center px-0 g-5">
+        <div class="col-12 col-lg-6">
+          <img src="img/webp/Lumina.webp" width="2280" height="1732" alt="abstract image" class="img-fluid position-relative rounded-1 shadow" data-aos="fade-up">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <img src="img/webp/Yllas.webp" width="1116" height="1578" alt="abstract image" class="img-fluid position-relative rounded-1 shadow" data-aos="fade-up" data-aos-duration="2000">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <img src="img/webp/Rollo.webp" width="1116" height="848" alt="abstract image" class="img-fluid position-relative rounded- shadow" data-aos="fade-up" data-aos-duration="3000">
+        </div>
+      </div>
+  </div>
+</div>
+<!-- PORTFOLIO-Section PART.2.1-->
+<div class="bg-dark">
+  <div class="container">
+    <h4 class="p-section-p2-h">Other projects</h4>
+  </div>)
+  <div class="container w-layout-grid client-list-grid px-vw-5">
+    <a href="https://www.figma.com/proto/cPc1DhVhrVCaWY8rZvz8zf/Huuva?page-id=0%3A1&node-id=18%3A941&viewport=105%2C569%2C0.51&scaling=min-zoom&starting-point-node-id=18%3A941&show-proto-sidebar=1" target="_blank" class="link-fancy link-fancy-light">
+      <h3>Huuva Kitchen OS</h3>
+      <p class="pb-4 text-secondary">Product, Web and Mobile App Design</p>
+    </a>
+    <a href="https://www.behance.net/gallery/63806163/University-of-Helsinki-HY-Visual-Identity-UIUX" target="_blank" class="link-fancy link-fancy-light">
+      <h3>University Of Helsinki</h3>
+      <p class="pb-4 text-secondary">Art Director</p>
+    </a>
+    <a href="https://www.behance.net/gallery/143021681/Corsearch-Has-That-Motion-Graphic-Marketing-Campaign" target="_blank" class="link-fancy link-fancy-light">
+      <h3>Corsearch Has That</h3>
+      <p class="pb-4 text-secondary">Motion Design - Marketing Campaign</p>
+    </a>
+    <a href="https://www.behance.net/gallery/132818161/Posters" target="_blank" class="link-fancy link-fancy-light">
+      <h3>Various Posters</h3>
+      <p class="pb-4 text-secondary">Digital Art</p>
+    </a>
+    <a href="https://www.figma.com/proto/WDctdtevbaybwn9ORxhOAN/Lemmenjoenmatkailu?page-id=0%3A1&node-id=6%3A25&viewport=1831%2C3219%2C0.4&scaling=min-zoom&starting-point-node-id=6%3A25" target="_blank" class="link-fancy link-fancy-light">
+      <h3>Lemmenjoen Matkailu</h3>
+      <p class="pb-4 text-secondary">Product and Web Design (Ongoing Project)</p>
+    </a>
+    <a href="https://www.figma.com/proto/KX1kMngmFzRREiDWw0ggok/WaveStation-components?page-id=29574%3A6327&node-id=109498%3A5382&viewport=85%2C4946%2C0.63&scaling=scale-down&starting-point-node-id=109498%3A5382" target="_blank" class="link-fancy link-fancy-light">
+      <h3>Wavestation</h3>
+      <p class="pb-4 text-secondary">Product and Web Design (Ongoing Project)</p>
+    </a>
+  </div>
+</div>
+</section>
+<!-- CONTACT-Section -->
+<section id="contact">
+  <main>
+    <div class="w-100 overflow-hidden position-relative bg-black text-white" data-aos="fade">
+      <div class="position-absolute w-100 h-100 bg-black opacity-75 top-0 start-0"></div>
+        <div class="container py-vh-4 position-relative mt-5 px-vw-5 text-center">
+          <div class="row d-flex align-items-center justify-content-center py-vh-5">
+            <div class="col-12 col-xl-10">
+              <span class="h1 text-secondary fw-lighter">I really love working on incredible ideas. <br>Let’s talk about what’s next for you.</span>
+              <form class="row">
+              <div class="col-12">
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email address</label>
+                  <input type="email" class="form-control form-control-lg bg-gray-800" id="email" aria-describedby="emailHelp" placeholder="John.Doe@Email.com">
+                  <div id="emailHelp" class="form-text">I'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="fullname" class="form-label">Name</label>
+                    <input type="text" class="form-control form-control-lg bg-gray-800" id="fullname" placeholder="John Doe">
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea type="text" class="form-control form-control-bg bg-gray-800" id="message" placeholder="Briefly describe what you are trying to build, this will help me determine how best to help you or simply start a conversation.">
+                    </textarea>
+                </div>
+                <button type="submit" class="btn btn-white btn-xl mb-4">Submit</button>
+              </div>
+              </form>
+            </div>
+          </div>
+         </div>
+       </div>
+    </main>
+</section>
+<footer class="bg-black border-top">
+  <div class="container text-center small py-vh-2 border-top">
+    <a href="#homepage" class="link-fancy link-fancy-light">Back To The Top!</a>
+  </div>
+</footer>
 
-  </section>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/aos.js"></script>
+<script>
+AOS.init({
+ duration: 800, // values from 0 to 3000, with step 50ms
+});
+</script>
+<script>
+  let scrollpos = window.scrollY
+  const header = document.querySelector(".navbar")
+  const header_height = header.offsetHeight
+
+  const add_class_on_scroll = () => header.classList.add("scrolled", "shadow-sm")
+  const remove_class_on_scroll = () => header.classList.remove("scrolled", "shadow-sm")
+
+  window.addEventListener('scroll', function() {
+    scrollpos = window.scrollY;
+
+    if (scrollpos >= header_height) { add_class_on_scroll() }
+    else { remove_class_on_scroll() }
+
+    console.log(scrollpos)
+  })
+</script>
 
 </body>
 </html>
