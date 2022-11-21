@@ -4,21 +4,6 @@
    * Copyright 2011-2022 Twitter, Inc.
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    */
-
-  @media screen and (max-width: 479px) {
-.padding-v-large {
-  padding-top: 3.95rem;
-  padding-bottom: 3.95rem;
-    }
-}
-
-@media screen and (max-width: 991px) {
-.padding-v-large {
-  padding-top: 6.05rem;
-  padding-bottom: 6.05rem;
-}
-}
-
 :root {
   --bs-main-text-rgb: 43, 44, 52;
   --bs-secondary-text-rgb: 145, 108, 122;
@@ -424,22 +409,31 @@ progress {
   display: none !important; }
 
 .p-section-p2-h {
-  padding-left: 3rem;
+  padding-left: 5vw;
+  padding-right: 5vw;
   padding-top: 12vh;
   padding-bottom: 2.5rem;
 }
 
-.client-list-grid {
-  grid-column-gap: 4rem;
-  grid-template-columns: 1fr 1fr 1fr;
+  @media screen and (max-width: 768px){
+.w-layout-grid {
+    flex-direction: column;
+    max-width: 100%;
+    margin: 0rem auto;
+}
+}
+
+.client-list {
+    position: relative;
+    padding: 0.5rem;
+    list-style: none;
+    margin-bottom: 4rem;
+    flex: 0 0 33.333333%;
 }
 
 .w-layout-grid {
-  display: grid;
-  grid-auto-columns: 1fr;
-  grid-template-rows: auto auto;
-  grid-row-gap: 1rem;
-  padding-bottom: 9vh;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .project-title.list {
@@ -6036,6 +6030,7 @@ textarea.form-control-bg {
   margin-bottom: 0.5rem !important; }
 
 .mb-3 {
+  margin-top: 1rem !important;
   margin-bottom: 1rem !important; }
 
 .mb-4 {
