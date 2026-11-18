@@ -1,0 +1,464 @@
+/*
+ * Layout glue only. Every value is a kit token (no raw colours, sizes or fonts).
+ * Kit gaps covered here are listed in KIT-GAPS.md.
+ * Breakpoints: 600 / 840 match @mbds/react/custom-media.css (--breakpoint-sm/md);
+ * plain media queries are used because the build has no custom-media transform.
+ */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--spacing-2xl);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-surface-page);
+  color: var(--color-text-body);
+  /* The portfolio brand's font token has no fallback stack. */
+  font-family: var(--body-font-family), monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: var(--color-text-heading);
+  font-family: var(--heading-font-family), monospace;
+}
+
+p {
+  margin: 0;
+}
+
+/* Native UI (scrollbars, form controls) follows a theme chosen in the toggle, not only the OS. */
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+/* Kit gap: skip link. A kit Link, hidden until focused. */
+.skip-link:not(:focus):not(:focus-visible) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  position: fixed;
+  z-index: 100;
+  top: var(--spacing-sm);
+  left: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-surface-raised);
+  border-radius: var(--border-radius-md);
+}
+
+/* Kit gap: page container. --layout-content-max-width is 390 below 840, so the
+   container stays fluid until md. */
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--layout-gutter);
+}
+
+@media (min-width: 840px) {
+  .container {
+    max-width: calc(var(--layout-content-max-width) + 2 * var(--layout-gutter));
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-section-gap);
+  padding-block: var(--spacing-2xl) var(--layout-section-gap);
+}
+
+main:focus {
+  outline: none;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  max-width: 60ch;
+}
+
+.eyebrow {
+  color: var(--color-text-accent);
+}
+
+.caption {
+  color: var(--color-text-caption);
+}
+
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: var(--body-lg-paragraph-spacing);
+  max-width: 65ch;
+}
+
+.stack-sm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.stack-md {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-sm) var(--spacing-md);
+}
+
+
+
+
+/* Kit gap: display type. The kit has no display style and its phone H1 (56px)
+   overflows 320 in a monospace face, so: H3 tokens on phones, H1 tokens from 840. */
+.display {
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+  font-size: var(--heading-h3-font-size);
+  font-weight: var(--heading-h3-font-weight);
+  line-height: var(--heading-h3-line-height);
+  letter-spacing: var(--heading-h3-letter-spacing);
+}
+
+@media (min-width: 840px) {
+  .display {
+    font-size: var(--heading-h1-font-size);
+    font-weight: var(--heading-h1-font-weight);
+    line-height: var(--heading-h1-line-height);
+    letter-spacing: var(--heading-h1-letter-spacing);
+  }
+}
+
+.section-title {
+  font-size: var(--heading-h4-font-size);
+  font-weight: var(--heading-h4-font-weight);
+  line-height: var(--heading-h4-line-height);
+  letter-spacing: var(--heading-h4-letter-spacing);
+}
+
+@media (min-width: 840px) {
+  .section-title {
+    font-size: var(--heading-h2-font-size);
+    font-weight: var(--heading-h2-font-weight);
+    line-height: var(--heading-h2-line-height);
+    letter-spacing: var(--heading-h2-letter-spacing);
+  }
+}
+
+.section-subtitle {
+  font-size: var(--heading-h4-font-size);
+  font-weight: var(--heading-h4-font-weight);
+  line-height: var(--heading-h4-line-height);
+  letter-spacing: var(--heading-h4-letter-spacing);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding-block: var(--spacing-2xl);
+}
+
+/* Selected work: one wide tile, then two half tiles (benchmark pattern). */
+.work-grid {
+  display: grid;
+  gap: var(--layout-grid-gap);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 840px) {
+  .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .work-card--wide {
+    grid-column: 1 / -1;
+  }
+  .work-card--wide .work-card__img {
+    aspect-ratio: 3 / 1;
+  }
+}
+
+/* Kit gap: Card has fixed widths (320/480); tiles fill their grid cell. */
+.work-card {
+  width: 100%;
+}
+
+.work-card__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top;
+}
+
+.card-stats {
+  display: grid;
+  gap: var(--spacing-md);
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  margin: 0;
+}
+
+.card-stats > div {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--spacing-xs);
+}
+
+.card-stats dt {
+  color: var(--color-text-caption);
+}
+
+.card-stats dd {
+  margin: 0;
+  color: var(--color-text-heading);
+}
+
+/* Clients strip. */
+.clients {
+  color: var(--color-text-caption);
+  text-wrap: balance;
+}
+
+/* Expertise and steps: four (or five) columns on desktop. */
+.expertise,
+.steps {
+  display: grid;
+  gap: var(--layout-grid-gap);
+  grid-template-columns: minmax(0, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 600px) {
+  .expertise,
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 840px) {
+  .expertise {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .steps {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+.steps {
+  counter-reset: step;
+}
+
+.steps li {
+  counter-increment: step;
+  padding-block-start: var(--spacing-md);
+  border-block-start: var(--border-width-sm) solid var(--color-border-default);
+}
+
+.steps li::before {
+  content: counter(step, decimal-leading-zero);
+  color: var(--color-text-caption);
+  font-size: var(--label-sm-font-size);
+  line-height: var(--label-sm-line-height);
+}
+
+.two-col {
+  display: grid;
+  gap: var(--layout-grid-gap);
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+}
+
+@media (min-width: 840px) {
+  .two-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.closing {
+  padding-block: var(--spacing-2xl);
+}
+
+/* Case study chapter index. */
+.chapter-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm) var(--spacing-lg);
+  margin: 0;
+  padding: var(--spacing-md) 0;
+  list-style: none;
+  border-block: var(--border-width-sm) solid var(--color-border-default);
+}
+
+.chapter {
+  gap: var(--spacing-md);
+}
+
+/* Kit gap: metric / stat. */
+.stats {
+  display: grid;
+  gap: var(--spacing-lg);
+  grid-template-columns: minmax(0, 1fr);
+  margin: 0;
+}
+
+@media (min-width: 600px) {
+  .stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.stats > div {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--spacing-xs);
+  padding-block-start: var(--spacing-md);
+  border-block-start: var(--border-width-sm) solid var(--color-border-default);
+}
+
+.stats dt {
+  color: var(--color-text-caption);
+}
+
+.stats dd {
+  margin: 0;
+  color: var(--color-text-heading);
+}
+
+/* Kit gap: case meta list. */
+.meta {
+  display: grid;
+  gap: var(--spacing-md) var(--spacing-lg);
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  margin: 0;
+}
+
+.meta dt {
+  color: var(--color-text-caption);
+}
+
+.meta dd {
+  margin: 0;
+}
+
+/* Kit gap: figure with caption. */
+.figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin: 0;
+}
+
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-lg);
+  background: var(--color-surface-raised);
+}
+
+.figure figcaption {
+  color: var(--color-text-caption);
+}
+
+/* Numbered key decisions in a case study. */
+.decisions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: decision;
+  max-width: 65ch;
+}
+
+.decisions li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--spacing-md);
+  counter-increment: decision;
+}
+
+.decisions li::before {
+  content: counter(decision, decimal-leading-zero);
+  color: var(--color-text-accent);
+  font-family: var(--heading-font-family), monospace;
+  font-size: var(--heading-h5-font-size);
+  line-height: var(--heading-h5-line-height);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+.site-footer {
+  padding-block: var(--spacing-xl);
+}
+
+.site-footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  color: var(--color-text-caption);
+}
+
+/* Logo text in the Top bar. Wraps onto two lines at 320 rather than running under the actions. */
+.wordmark {
+  color: var(--color-text-heading);
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  main {
+    padding-block: 0;
+  }
+}
